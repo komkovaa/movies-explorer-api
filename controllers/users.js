@@ -50,8 +50,8 @@ module.exports.login = (req, res, next) => {
       );
       res.send({ token });
     })
-    .catch(() => {
-      next(new UnauthorizedError('Неправильные почта или пароль'));
+    .catch((err) => {
+      next(err);
     });
 };
 
